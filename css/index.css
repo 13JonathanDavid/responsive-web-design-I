@@ -99,17 +99,17 @@ a
 .top-nav-bar nav {
 	display: flex;
 	width:100%;
-	border:solid red thin;
+	flex-wrap: wrap;
+	
 	align-items: flex-end;
 	justify-content:space-between;
 }
 
-@media(max-width:850px) {
-	.top-nav-bar nav {
+@media(max-width:500px) {
+	.top-nav-bar  {
 		display: flex;
-		flex-direction:column;
-		border:solid red thin;
-		align-items: flex-start;
+		flex-direction:column-reverse;
+		align-items: center;
 		justify-content:space-between;
 	}
 	.top-nav-bar nav a {
@@ -120,12 +120,50 @@ a
 		width:100%;
 		text-align:center;
 	}
-	img {
+	.main-content img, 	header img {
 		display:none;
 	}
+	.top-content, .bottom-content {
+		flex-direction:column;
+	}
+	.logo {
+		margin-bottom:20px;
+	}
+	footer {
+		margin:20px;
+	}
+	section {
+		margin:20px;
+	}
 }
+@media(min-width:500px) and (max-width:800px) {
+	.main-content section, footer{
+		margin-left:20px;
+		margin-right:20px;
+	}
+	.top-nav-bar nav {
+	justify-content:space-around;
+}
+.top-nav-bar {
+	flex-direction:row-reverse;
+	flex-wrap:wrap-reverse;
+	align-items:center;
+	}
+	.top-nav-bar a.logo {
+	margin: 0 auto;
+	}
+	.logo img{
+		padding:40px;		
+	}
+	header img {
+		display:none;
+	}
 
-
+}
+.main-content p {
+	width:100%;
+	max-width:450px;
+}
 .top-nav-bar nav a:hover
 {
 	text-decoration: underline;
@@ -194,6 +232,7 @@ header .main-header-text h2
 {
  margin-top: 20px;
  width: 98%;
+
 }
 
 .main-content article .image-box 
@@ -206,6 +245,11 @@ header .main-header-text h2
 	font-weight: 550;
 }
 
+.main-content img {
+	margin: 30px auto;
+	width:98%;
+}
+
 .main-content article .image-box img 
 {
 border-bottom: grey solid 1.2px;
@@ -214,13 +258,11 @@ border-bottom: grey solid 1.2px;
 .top-content
 {
 	display: flex;
-	margin-bottom: 20px;
 }
 
 .bottom-content
 {
 display: flex;
-margin-top: 20px;
 justify-items: space-between;
 }
 
@@ -238,6 +280,8 @@ margin-right: 0;
 
 .big-box 
 {
+	width:100%;
+	min-width:100px;
 	max-width: 400px;
 	margin: 20px;
 	font-size: 16px;
@@ -273,20 +317,20 @@ margin-right: 0;
 
 	/*footer styling*/
 
-.footer-content .services
+footer .services
 {
 	display: flex;
 	margin-bottom: 75px;
 }
 
-.footer-content ul
+footer ul
 {
 list-style-type: square;
 line-height: 2;
 margin: 20px;
 }
 
-.footer-content img
+footer img
 {
 	margin-left: 40px;
 }
